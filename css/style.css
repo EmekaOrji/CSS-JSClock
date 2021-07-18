@@ -1,0 +1,108 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  --size: 1.5;
+}
+body {
+  height: 100vh;
+  background: #5684A0;
+}
+.position {
+  aspect-ratio: 1 / 1;
+  position: absolute;
+  inset: 0.5em;
+  margin: auto;
+}
+.clock-ctn {
+  position: fixed;
+  inset: -5em 0.5em 0.5em 0.5em;
+  background: darkblue;
+  width: calc(18rem * var(--size));
+  border-radius: 50%;
+  box-shadow: 0em 1em 2em 0em #000000d3;
+}
+/*.clock-ctn::before {
+  content: "";
+  width: 94%;
+  aspect-ratio: inherit;
+  position: inherit;
+  inset: inherit;
+  margin: inherit;
+  border: 2px solid #FF5733;
+  border-radius: 50%;
+  background: transparent;
+}*/
+.markers {
+  width: 2%;
+  aspect-ratio: 1 / 45;
+  border-radius: 30%;
+  background: #ffffff90;
+}
+.cardinal {
+  background: #FF5733;
+  width: 4%;
+  aspect-ratio: 2 / 45;
+}
+#m-3-9 {
+  transform: rotate(90deg);
+}
+#m-1-7 {
+  transform: rotate(30deg);
+}
+#m-2-8 {
+  transform: rotate(60deg);
+}
+#m-4-10 {
+  transform: rotate(-30deg);
+}
+#m-5-11 {
+  transform: rotate(-60deg);
+}
+.clock-face {
+  background: darkblue;
+  width: 75%;
+  border-radius: 50%;
+}
+.clock-hand {
+  border-radius: 2em;
+  background: linear-gradient(#FF5733 50%, transparent 50%);
+}
+.hour {
+  width: 3%;
+  aspect-ratio: 1 / 25;
+}
+.minute {
+  width: 2%;
+  aspect-ratio: 1 / 45;
+}
+.second {
+  width: .5%;
+  aspect-ratio: 1 / 192;
+  background: linear-gradient(red 50%, transparent 50%);
+}
+.dot {
+  width: 7%;
+  border-radius: 50%;
+  background: #fff;
+}
+a {
+  background: #FF5733A3;
+  color: darkblue;
+  font-size: 1.2em;
+  text-align: center;
+  width: fit-content;
+  padding: 1% 2%;
+  border-radius: 15px;
+  position: absolute;
+  bottom: 11%;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  text-decoration: none;
+}
+a:hover {
+  filter: blur(.05em);
+}
