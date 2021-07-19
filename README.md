@@ -1,3 +1,3 @@
 # CSS-JSClock
 
-Smooth Analog Clock [@JavaScript30](https://github.com/wesbos/JavaScript30)
+[JavaScript 30 Days](https://github.com/wesbos/JavaScript30) - Smooth Analog Clock
