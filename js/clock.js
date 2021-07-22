@@ -1,3 +1,4 @@
+
 var date = new Date();
 
 var currentSecond = date.getSeconds();
@@ -16,14 +17,18 @@ var z = currentHour * 30 + ((30/60)*currentMinute + (((30/60)/60)*currentSecond)
 // 'y' is the degree value of the minuteHand 'Transform[Rotate]'
 // 'z' is the degree value of the hourHand 'Transform[Rotate]'
 function timer() {
-  x += 6/100;
-  y += (6/100/60);
-  z += (6/100/60/12);
+  x += 6;
+  y += (6/60);
+  z += (6/60/12);
   secondHand.style.transform = `rotate(${x}deg)`;
   minuteHand.style.transform = `rotate(${y}deg)`;
   hourHand.style.transform = `rotate(${z}deg)`;
+  const audio = document.querySelector("audio");
+  audio.currentTime = 0;
+  audio.play();
 }
-setInterval(timer, 10);
+playBTN.addEventListener("click", timer);
+setInterval(timer, 1000);
 window.addEventListener("focus", function () {
-  window.location.reload();
+  timer();
 });

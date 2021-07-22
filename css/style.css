@@ -30,17 +30,6 @@ body {
 .clock-ctn:hover {
   --size: calc(var(--initSize) + 0.3);
 }
-/*.clock-ctn::before {
-  content: "";
-  width: 94%;
-  aspect-ratio: inherit;
-  position: inherit;
-  inset: inherit;
-  margin: inherit;
-  border: 2px solid #FF5733;
-  border-radius: 50%;
-  background: transparent;
-}*/
 .markers {
   width: 2%;
   aspect-ratio: 1 / 45;
@@ -75,6 +64,7 @@ body {
 .clock-hand {
   border-radius: 2em;
   background: linear-gradient(#FF5733 50%, transparent 50%);
+  transition: 1000ms ease;
 }
 .hour {
   width: 3%;
@@ -88,6 +78,7 @@ body {
   width: .5%;
   aspect-ratio: 1 / 192;
   background: linear-gradient(red 50%, transparent 50%);
+  transition: 200ms cubic-bezier(1, -0.15, 0.32, 2.32);
 }
 .dot {
   width: 7%;
@@ -103,11 +94,12 @@ a {
   padding: 1% 2%;
   border-radius: 15px;
   position: absolute;
-  bottom: 11%;
+  bottom: 9%;
   left: 0;
   right: 0;
   margin: 0 auto;
   text-decoration: none;
+  z-index: 999;
 }
 a:hover {
   filter: blur(.05em);
@@ -124,4 +116,13 @@ a:hover {
   :root {
     --initSize: 0.7;
   }
+}
+button {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  opacity: 0;
 }
