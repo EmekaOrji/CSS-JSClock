@@ -31,4 +31,5 @@ playBTN.addEventListener("click", timer);
 setInterval(timer, 1000);
 window.addEventListener("focus", function () {
   timer();
+  window.location.reload();
 });
