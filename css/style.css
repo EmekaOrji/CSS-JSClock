@@ -35,14 +35,16 @@ body {
   aspect-ratio: 1 / 45;
   border-radius: 30%;
   background: #ffffff90;
+  color: #ffffff90;
+  overflow: visible;
+  display: flex;
+  justify-content: center;
 }
 .cardinal {
   background: #FF5733;
+  color: #FF5733;
   width: 4%;
   aspect-ratio: 2 / 45;
-}
-#m-3-9 {
-  transform: rotate(90deg);
 }
 #m-1-7 {
   transform: rotate(30deg);
@@ -50,11 +52,52 @@ body {
 #m-2-8 {
   transform: rotate(60deg);
 }
+#m-3-9 {
+  transform: rotate(90deg);
+}
 #m-4-10 {
-  transform: rotate(-30deg);
+  transform: rotate(120deg);
 }
 #m-5-11 {
+  transform: rotate(150deg);
+}
+.number {
+  position: absolute;
+  font-size: 2rem;
+  z-index: 1;
+}
+.cardinal .number {
+  font-size: 3rem;
+}
+.markers .number:first-child {
+  top: -2%;
+}
+.markers .number:last-child {
+  bottom: -2%;
+}
+.markers:nth-child(2) .number {
+  transform: rotate(-30deg);
+}
+.markers:nth-child(3) .number {
   transform: rotate(-60deg);
+}
+.markers:nth-child(4) .number {
+  transform: rotate(-90deg);
+}
+.markers:nth-child(5) .number {
+  transform: rotate(-120deg);
+}
+.markers:nth-child(6) .number {
+  transform: rotate(-150deg);
+}
+.clock-ctn .markers > * {
+  opacity: 0;
+}
+.clock-ctn:hover .markers > * {
+  opacity: 1;
+}
+.clock-ctn:hover .markers {
+  background: transparent;
 }
 .clock-face {
   background: darkblue;
@@ -91,6 +134,7 @@ a {
   font-size: 1.2em;
   text-align: center;
   width: fit-content;
+  max-width: 20%;
   padding: 1% 2%;
   border-radius: 15px;
   position: absolute;
@@ -111,10 +155,22 @@ a:hover {
   .clock-ctn:hover {
     --size: var(--initSize);
   }
+  .number {
+    font-size: 1rem;
+  }
+  .cardinal .number {
+    font-size: 1.5rem;
+  }
 }
 @media screen and (max-width: 310px) {
   :root {
     --initSize: 0.7;
+  }
+  .number {
+    font-size: 0.8rem;
+  }
+  .cardinal .number {
+    font-size: 1.2rem;
   }
 }
 button {
